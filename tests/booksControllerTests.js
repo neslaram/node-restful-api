@@ -5,14 +5,10 @@ describe('Book Controller Tests:', () => {
   describe('Post', () => {
     it('should not allow an empty title on post', () => {
       const Book = function () {
-        this.save = () => {};
+        this.save = () => { };
       };
 
-      const req = {
-        body: {
-          author: 'Jon'
-        }
-      };
+      const req = { body: { author: 'Jon' } };
 
       const res = {
         status: sinon.spy(),

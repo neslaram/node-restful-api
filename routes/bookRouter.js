@@ -25,9 +25,7 @@ function routes(Book) {
     .route('/books/:bookId')
     .get((req, res) => res.json(req.book))
     .put((req, res) => {
-      const {
-        book
-      } = req;
+      const { book } = req;
       book.title = req.body.title;
       book.author = req.body.author;
       book.genre = req.body.genre;
@@ -40,9 +38,7 @@ function routes(Book) {
       });
     })
     .patch((req, res) => {
-      const {
-        book
-      } = req;
+      const { book } = req;
       // eslint-disable-next-line no-underscore-dangle
       if (req.body._id) {
         // eslint-disable-next-line no-underscore-dangle

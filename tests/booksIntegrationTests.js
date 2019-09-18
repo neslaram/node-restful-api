@@ -12,11 +12,7 @@ const agent = request.agent(app);
 
 describe('Book Crud Test', () => {
   it('should allow a book to be posted and return read and _it', (done) => {
-    const bookPost = {
-      title: 'My Book',
-      author: 'Jon',
-      genre: 'Fiction'
-    };
+    const bookPost = { title: 'My Book', author: 'Jon', genre: 'Fiction' };
 
     agent
       .post('/api/books')

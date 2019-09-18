@@ -22,10 +22,7 @@ function booksController(Book) {
       return res.json(books);
     });
   }
-  return {
-    post,
-    get
-  };
+  return { post, get };
 }
 
 module.exports = booksController;
