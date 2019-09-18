@@ -1,17 +1,16 @@
-const should = require("should");
-const sinon = require("sinon");
-const bookController = require("../controllers/booksController");
+const sinon = require('sinon');
+const bookController = require('../controllers/booksController');
 
-describe("Book Controller Tests:", () => {
-  describe("Post", () => {
-    it("should not allow an empty title on post", () => {
-      const Book = function(book) {
+describe('Book Controller Tests:', () => {
+  describe('Post', () => {
+    it('should not allow an empty title on post', () => {
+      const Book = function () {
         this.save = () => {};
       };
 
       const req = {
         body: {
-          author: "Jon"
+          author: 'Jon'
         }
       };
 
@@ -27,7 +26,7 @@ describe("Book Controller Tests:", () => {
       res.status
         .calledWith(400)
         .should.equal(true, `Bad Status ${res.status.args[0][0]}`);
-      res.send.calledWith("Title is required").should.equal(true);
+      res.send.calledWith('Title is required').should.equal(true);
     });
   });
 });
