@@ -6,15 +6,12 @@ const app = express();
 
 let localhost = '';
 if (process.env.ENV === 'Test') {
-  console.log('This is a test');
   localhost = 'mongodb://localhost/bookAPI_Test';
 } else {
-  console.log('This is for real');
   localhost = 'mongodb://localhost/bookAPI-prod';
 }
 const db = mongoose.connect(localhost, { useNewUrlParser: true }, (err) => {
   if (err) throw err;
-  console.log('Successfully connected to database.');
 });
 
 const port = process.env.PORT || 3000;
@@ -31,7 +28,7 @@ app.get('/', (req, res) => {
 });
 
 app.server = app.listen(port, () => {
-  console.log(`Running on port ${port}`);
+
 });
 
 module.exports = app;
