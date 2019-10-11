@@ -40,7 +40,7 @@ async function put(req: Request, res: Response) {
   try {
     const { id } = req.params;
     const { title, author, genre, read } = req.body;
-    const book = await Book.findByIdAndUpdate(id, { title, author, genre, read });
+    const book = await Book.findByIdAndUpdate(id, { title, author, genre, read }, { new: true });
     return res.json(book);
   }
   catch (err) {
@@ -52,7 +52,7 @@ async function put(req: Request, res: Response) {
 async function patch(req: Request, res: Response) {
   try {
     const { id } = req.params;
-    const book = await Book.findByIdAndUpdate(id, { $set: req.body });
+    const book = await Book.findByIdAndUpdate(id, { $set: req.body }, { new: true });
     return res.json(book);
   }
   catch (err) {
